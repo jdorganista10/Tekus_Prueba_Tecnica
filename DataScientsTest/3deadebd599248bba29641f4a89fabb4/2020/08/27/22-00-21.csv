@@ -1,0 +1,3 @@
+Duration,MovementDuration,MovementInteractions,ArkboxInteractions,StandardInteractions,HardwareInteractions,TenantId,SessionId,Key,Id,Date,DateInTicks,TTL
+14,0,0,52,0,0,417db1c3f6c5414092021ff2ca769e22,,3deadebd599248bba29641f4a89fabb4,506,2020-08-27T17:54:13.5120-0400,637341620535120000,1614462854
+5,0,1,12,0,0,417db1c3f6c5414092021ff2ca769e22,,3deadebd599248bba29641f4a89fabb4,507,2020-08-27T17:55:12.2350-0400,637341621122350000,1614462912

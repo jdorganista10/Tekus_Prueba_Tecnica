@@ -1,0 +1,3 @@
+Duration,MovementDuration,MovementInteractions,ArkboxInteractions,StandardInteractions,HardwareInteractions,Key,Id,Date,DateInTicks,TTL
+23,10,2,0,0,0,070fce8dd1b0443cafbbad0eccba462e,1724,2020-01-08T16:31:20.0540-0500,637141158800540000,1594243880
+16,2,1,0,0,0,070fce8dd1b0443cafbbad0eccba462e,1725,2020-01-08T16:48:09.2770-0500,637141168892770000,1594244889
