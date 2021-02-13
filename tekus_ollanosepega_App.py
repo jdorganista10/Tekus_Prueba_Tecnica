@@ -56,9 +56,8 @@ fig_ArkInt_vs_Id = px.scatter(all_data, x='id_olla', y='ArkboxInteractions',
                 hover_data = ['Duration', 'MovementDuration','MovementInteractions','ArkboxInteractions'])
 ###===========================================APLICACION==========================================================
 ### Aplicacion
-app=dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
-
-#server = app.server
+tekus_ollanosepega_App=dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = tekus_ollanosepega_App.server
 
 ### Estilos
 SIDEBAR_STYLE = {
@@ -102,13 +101,13 @@ sidebar = html.Div(
 
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
-app.layout= html.Div(children=[
+tekus_ollanosepega_App.layout= html.Div(children=[
     dcc.Location(id="url"), sidebar, content
 ])
 
 #,
 
-@app.callback(Output("page-content", "children"), [Input("url", "pathname")])
+@tekus_ollanosepega_App.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
         return html.Div(
@@ -186,4 +185,4 @@ def render_page_content(pathname):
     )
 
 if __name__=='__main__':
-    app.run_server(host='0.0.0.0', port='8050', debug=True)
+    tekus_ollanosepega_App.run_server(host='0.0.0.0', port='8050', debug=True)

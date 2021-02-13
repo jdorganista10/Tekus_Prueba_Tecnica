@@ -53,14 +53,14 @@ def get_top_movements_cities(df,pots,cities):
     df_cities = cities.set_index('CityId')
     dict_cities = {i: df_cities.loc[pots.CityId[i],'Name'] for i in pots.index}
     df['City'] = df.id_olla.map(dict_cities)
-    df_out = df.groupby('City').sum().drop(columns=['id_olla','Weekday','Hour','Duration','ArkboxInteractions'])
+    df_out = df.groupby('City').mean().drop(columns=['id_olla','Weekday','Hour','Duration','ArkboxInteractions'])
     
-    ##df_out = df_out[['MovementInteractions','MovementDuration','Duration','ArkboxInteractions']]
     df_out.reset_index(inplace = True)
+    df_out = df_out[['City','MovementInteractions','MovementDuration']]
     return df_out.sort_values(by='MovementInteractions',ascending=False)
 
 def get_top_ollas(df,pots):
-    df_out = df.groupby('id_olla').sum().drop(columns=['Weekday','Hour','Duration','MovementDuration','MovementInteractions'])
+    df_out = df.groupby('id_olla').mean().drop(columns=['Weekday','Hour','Duration','MovementDuration','MovementInteractions'])
     #df_out = df_out[['ArkboxInteractions','Duration','MovementDuration','MovementInteractions']]
     
     dict_serial_olla = {i: pots.loc[i,'Serial'] for i in df_out.index}
